@@ -9,7 +9,6 @@ If someone changes the locked file, or you type the wrong password, AES-GCM noti
 ```
 aes-gcm-file-encryptor/
 ├── encryptor.py     the main program (encrypt + decrypt + tamper check)
-├── demo.py          runs all the tests automatically
 ├── README.md        this file
 ├── input/           PUT the files you want to encrypt here
 │   ├── notes.txt        (test file: text)
