@@ -53,42 +53,6 @@ Type the same password. You get `output/notes.txt`.
 
 > On Windows, if `python` does not work, use `py` instead.
 
-## Run the demo
-
-```
-python demo.py
-```
-
-Expected output (shortened):
-
-```
-PART 1: encrypt, then decrypt, and get the same file back
-  [PASS] notes.txt came back exactly the same
-  [PASS] report.pdf came back exactly the same
-
-PART 2: a new nonce every time
-  [PASS] the two nonces are different
-
-PART 3: tampering is detected (one bit changed)
-  [PASS] one bit changed in the salt -> rejected, no output file
-  [PASS] one bit changed in the nonce -> rejected, no output file
-  [PASS] one bit changed in the encrypted data -> rejected, no output file
-  [PASS] one bit changed in the tag (last byte) -> rejected, no output file
-  [PASS] last 10 bytes removed -> rejected, no output file
-
-PART 4: wrong password
-  [PASS] wrong password -> rejected, no output file
-
-PART 5: other errors
-  [PASS] file that does not exist -> rejected
-  [PASS] empty file -> rejected
-  [PASS] empty password -> rejected
-
-All checks passed!
-```
-
-The demo files start with `demo_`, so you can open `ciphertext/` and `output/` afterwards and see them.
-
 ## Show the tamper test by hand
 
 The program has no "tamper" command. You damage the file yourself, like a real attacker would, and AES-GCM catches it by itself when you decrypt.
